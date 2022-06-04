@@ -1,0 +1,103 @@
+/* ---------------------- */
+/* Custom properties      */
+/* ---------------------- */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{
+    --clr-desaturated-red : 0, 36%, 70%;
+    --clr-soft-red : 0, 93%, 68%;
+    --clr-dark-grayish-red : 0, 6%, 24%;
+    --lnr-grdnt-white : 135deg, #FFF9F9, #FFF3F3;
+    --lnr-grdnt-red : 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%)
+}
+
+/* ---------------------- */
+/* Resets                 */
+/* ---------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture{
+    margin: 0;
+}
+
+/* Set up the body */
+body{
+    background-color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #000;
+    min-height: 100vh;
+}
+
+/* Make images easier to work with */
+img,
+picture{
+    max-width: 100%;
+    display: block;
+}
+
+/* Make form elements easier to work with */
+input,
+button,
+textarea,
+select{
+    font: inherit;
+}
+
+/* ---------------------- */
+/* Utility clases         */
+/* ---------------------- */
+
+.flex{
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.d-none{
+    display: none;
+}
+
+.d-initial{
+    display: initial;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* ------------------------------- */
+/* Form info validation clases     */
+/* ------------------------------- */
+
+.invalid-info{
+    border: 2px solid #ff6e6c;
+}
+
+.valid-info{
+    border: 2px solid #4de788;
+}
+
+.invalid-info-msg{
+    color: rgb(222, 127, 127) !important;
+    font-size: 0.9rem;
+    margin: 1.2rem;
+}

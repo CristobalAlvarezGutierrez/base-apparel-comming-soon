@@ -9,10 +9,23 @@ import './mainPage.css';
 const MainPage = () => {
 
 	const [stateInputText, setStateInputText] = useState("");
-	const [stateValidForm, setStateValidForm] = useState(true);
+	const [stateValidForm, setStateValidForm] = useState({
+		state: true,
+		msg: ""
+	});
 
 	const handleSubmitForm = (e) =>{
-		setStateValidForm(!!stateInputText.match(emailValidation));
+		stateInputText !== ""
+		?
+		setStateValidForm(!!stateInputText.match({
+			state : emailValidation,
+			msg : "Please provide a valid email."
+		}))
+		:
+		setStateValidForm({
+			state : false,
+			msg : "The email field is required."
+		})
 	}
 
 	return (
@@ -37,9 +50,9 @@ const MainPage = () => {
 						setState={setStateInputText}
 						currentState={stateInputText}
 						onSubmitFunc={handleSubmitForm}
-						customClassName={stateValidForm === false ? "input-group invalid-info" : "input-group"}
+						customClassName={stateValidForm.state === false ? "input-group invalid-info" : "input-group"}
 					/>
-					<span className={`invalid-info-msg ${stateValidForm === false ? 'd-initial' : 'd-none'}`}>Please provide a valid email.</span>
+					<span className={`invalid-info-msg ${stateValidForm.state === false ? 'd-initial' : 'd-none'}`}>{stateValidForm.msg}</span>
 				</div>
 			</div>
 		</>

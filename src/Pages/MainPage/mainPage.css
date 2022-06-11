@@ -99,7 +99,7 @@
 
     .covered-seccion{
         background: linear-gradient(var(--lnr-grdnt-white));
-        height: 100vh;
+        min-height: 100vh;
         text-align: center;
     }
 

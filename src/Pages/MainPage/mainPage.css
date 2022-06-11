@@ -1,91 +1,126 @@
-.mobile-hero-img{
-    width: 100%;
-}
-
-.main-page-info-container{
-    display: flex;
-    align-items: center;
-    min-width: 100vw;
+.grid{
+    display: grid;
+    grid-template-areas:
+    'covered-seccion covered-seccion desktop-hero-img'
+    'covered-seccion covered-seccion desktop-hero-img';
+    grid-template-columns: 1fr auto;
     min-height: 100vh;
-    background: linear-gradient(var(--lnr-grdnt-white));
 }
 
-.main-page-info-container .container h1{
-    text-align: center;
-    line-height: 1.2;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    font-weight: 300;
-    color : hsl(var(--clr-desaturated-red));
-    margin-top: 4rem;
-    margin-bottom: 1rem;
+.covered-seccion{
+    grid-area: covered-seccion;
+    background-image: url('../../Assest/img/bg-pattern-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.desktop-hero-img{
+    grid-area: desktop-hero-img;
 }
 
-.main-page-info-container .container span{
-    font-weight: 400;
-    color: #000;
+.desktop-hero-img img{
+    height: 100vh;
 }
 
-.main-page-info-container .container p{
-    text-align: center;
-    font-weight: 400;
-    font-size: 0.9rem;
-    color : hsl(var(--clr-desaturated-red));
-    margin-bottom: 2.5rem;
+.mblImg{
+    display: none;
 }
 
 .container{
-    max-width: 320px;
+    max-width: fit-content;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container h1{
+    /* margin-top: 45%; */
+    font-size: 5rem;
+    font-weight: lighter;
+    letter-spacing: 15px;
+    color: hsl(var(--clr-desaturated-red));
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.container span{
+    font-weight: 600;
+    color: black;
+}
+
+.container p{
+    max-width: 530px;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: hsl(var(--clr-desaturated-red));
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.container-info{
+    /* border: 1px solid blue; */
+    width: max-content;
     margin: 0 auto;
 }
 
-.desk-hero-img{
-    display: none;
+.input-group{
+    max-width: 480px;
 }
 
-.header-desktop{
-    display: none;
-}
+/* ------------------------------- */
+/* Media Queries                   */
+/* ------------------------------- */
 
-@media only screen and (min-width: 1000px) {
-    .main-page-info-container{
-        flex-direction: row-reverse;
-    }
-
-    .main-page-info-container{
-        background-image: url('../../Assest//img/bg-pattern-desktop.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .desk-hero-img{
-        display: block;
-        min-height: 100vh;
-    }
-
-    .mobile-hero-img{
-        display: none;
-    }
-
-    .header-desktop{
-        display: initial;
-    }
-
-    .header-mobile{
-        display: none;
-    }
-
-    .main-page-info-container .container h1{
-        text-align: left;
-    }
-
-    .main-page-info-container .container p{
-        text-align: left;
-        line-height: 2;
+@media only screen and (max-width: 1000px) {
+    .grid{
+        display: grid;
+        grid-template-areas:
+        'covered-seccion covered-seccion'
+        'covered-seccion covered-seccion';
+        overflow: hidden;
     }
 
     .container{
-        max-width: 400px;
+        justify-content: unset;
+    }
+
+    .mblImg{
+        display: block;
+    }
+
+    .mblImg img{
+        min-width: 100vw;
+    }
+
+    .covered-seccion{
+        background: linear-gradient(var(--lnr-grdnt-white));
+        height: 100vh;
+        text-align: center;
+    }
+
+    .desktop-hero-img{
+        display: none;
+    }
+
+    .container-info{
+        margin: 0;
+    }
+
+    .container h1{
+        font-size: 3rem;
+    }
+
+    .container p{
+        font-size: 1rem;
+    }
+
+    .container-info{
+        padding: 2.5rem;
+        max-width: 420px;
     }
 }

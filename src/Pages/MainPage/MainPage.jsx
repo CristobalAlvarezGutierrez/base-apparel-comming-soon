@@ -29,33 +29,34 @@ const MainPage = () => {
 	}
 
 	return (
-		<>
-			<div className="header-mobile">
-				<Header />
-			</div>
-			<img src={imgMobile} alt="apparel base hero" className="mobile-hero-img" />
-			<div className="main-page-info-container">
-				<img src={imgDesk} alt="apparel base hero" className="desk-hero-img" />
+		<div className='grid'>
+			<div className='covered-seccion'>
 				<div className="container">
-					<div className="header-desktop">
-						<Header />
+					<Header />
+					<div className='mblImg'>
+						<img src={imgMobile} alt="base apparel hero" />
 					</div>
-					<h1>We're <br/> <span>coming<br/> soon</span></h1>
-					<p>
-						Hello fellow shoppers! We're currently building our new fashion store.
-						Add your email below to stay up-to-date with announcements and our lauch
-						deals.
-					</p>
-					<InputForm
-						setState={setStateInputText}
-						currentState={stateInputText}
-						onSubmitFunc={handleSubmitForm}
-						customClassName={stateValidForm.state === false ? "input-group invalid-info" : "input-group"}
-					/>
-					<span className={`invalid-info-msg ${stateValidForm.state === false ? 'd-initial' : 'd-none'}`}>{stateValidForm.msg}</span>
+					<div className="container-info">
+						<h1>We're <br/> <span>coming<br/> soon</span></h1>
+						<p>
+							Hello fellow shoppers! We're currently building our new fashion store.
+							Add your email below to stay up-to-date with announcements and our lauch
+							deals.
+						</p>
+						<InputForm
+							setState={setStateInputText}
+							currentState={stateInputText}
+							onSubmitFunc={handleSubmitForm}
+							customClassName={stateValidForm.state === false ? "input-group invalid-info" : "input-group"}
+						/>
+						<span className={`invalid-info-msg ${stateValidForm.state === false ? 'd-initial' : 'd-none'}`}>{stateValidForm.msg}</span>
+					</div>
 				</div>
 			</div>
-		</>
+			<div className='desktop-hero-img'>
+				<img src={imgDesk} alt="base apparel hero"/>
+			</div>
+		</div>
 	)
 }
 

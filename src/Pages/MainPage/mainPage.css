@@ -82,7 +82,7 @@
         grid-template-areas:
         'covered-seccion covered-seccion'
         'covered-seccion covered-seccion';
-        /* overflow: hidden; */
+        overflow: hidden;
     }
 
     .container{

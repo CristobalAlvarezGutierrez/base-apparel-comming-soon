@@ -17,10 +17,10 @@ const MainPage = () => {
 	const handleSubmitForm = (e) =>{
 		stateInputText !== ""
 		?
-		setStateValidForm(!!stateInputText.match({
-			state : emailValidation,
+		setStateValidForm({
+			state : !!stateInputText.match(emailValidation) ,
 			msg : "Please provide a valid email."
-		}))
+		})
 		:
 		setStateValidForm({
 			state : false,
